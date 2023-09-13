@@ -26,3 +26,56 @@ sum(10, 2);
 // 5 - Retorno da função
 const greeting = (name) => `Olá, ${name}`;
 console.log(greeting('Irving'));
+// 6 - Funções Anônimas
+setTimeout(() => {
+    console.log('Executando função anônima depois de 2 segundos');
+}, 2000);
+setTimeout(function () {
+    const sallary = 1000;
+    console.log(sallary);
+}, 3000);
+// 7 - Tipos de Objetos
+const passCoordinates = (coord) => {
+    console.log("X coordinates: " + coord.x);
+    console.log("Y coordinates: " + coord.y);
+};
+const objCoord = { x: 329, y: 84.2 };
+passCoordinates(objCoord);
+const pessoaObj = { name: "Irving", lastName: "Paim" };
+console.log(pessoaObj);
+// 8 - Propriedades Opcionais
+const showNumbers = (a, b, c) => {
+    console.log("A: " + a);
+    console.log("B: " + b);
+    c ? console.log("C: " + c) : "";
+};
+showNumbers(1, 2, 3);
+showNumbers(4, 5);
+// 9 - Validação de props opcionais
+const advancedGreeting = (firstName, lastNome) => {
+    lastNome !== undefined
+        ? console.log(`Olá, ${firstName} ${lastNome}, tudor bem?`)
+        : console.log(`Olá, ${firstName}, tudor bem?`);
+};
+advancedGreeting("Irving");
+// 10 - Union Types
+const showBalance = (balance) => {
+    console.log(`O saldo da conta é R$ ${balance}`);
+};
+showBalance(100);
+showBalance('500');
+const arr2 = [1, "Irving", true];
+// 11 - Avançando com Union Types
+const showUserRole = (role) => {
+    if (typeof role === "boolean") {
+        return "Usuário não aprovado";
+    }
+    return `A função do usuário é: ${role}`;
+};
+console.log(showUserRole(false));
+console.log(showUserRole("Irving Paim"));
+const showId = (id) => {
+    console.log(`O ID é: ${id}`);
+};
+showId(1);
+showId("200");
