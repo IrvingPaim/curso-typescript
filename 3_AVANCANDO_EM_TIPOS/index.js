@@ -112,3 +112,13 @@ const para = document.createElement('h2');
 para.textContent = "Título de Exemplo";
 para.insertAdjacentElement('afterend', p);
 console.log(para.textContent);
+// 17 - Bigint
+let n;
+n = 1000n;
+console.log(n);
+console.log(typeof n);
+console.log(n + 100n);
+// 18 - Symbol
+let symbolA = Symbol("a");
+let symbolB = Symbol("a");
+console.log(symbolA === symbolB);

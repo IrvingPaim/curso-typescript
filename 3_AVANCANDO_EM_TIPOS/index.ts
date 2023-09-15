@@ -207,3 +207,21 @@ para.insertAdjacentElement('afterend', p!)
 
 console.log(para.textContent)
 
+// 17 - Bigint
+
+let n: bigint
+
+n = 1000n
+
+console.log(n)
+
+console.log(typeof n)
+
+console.log(n + 100n)
+
+// 18 - Symbol
+
+let symbolA: symbol = Symbol("a")
+let symbolB: symbol = Symbol("a")
+
+console.log(symbolA === symbolB)
