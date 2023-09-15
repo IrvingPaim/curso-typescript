@@ -134,3 +134,76 @@ const showId = (id: ID) => {
 showId(1)
 showId("200")
 
+// 13 - Introdução a Interfaces
+
+interface Point {
+    x: number
+    y: number
+    z: number
+}
+
+const showCoords = ({x, y, z}: Point) => {
+    console.log(`X: ${x} Y: ${y} Z: ${z}`)
+}
+
+const coordObj: Point = {
+    x: 10,
+    y: 15,
+    z: 20
+}
+
+showCoords(coordObj)
+
+// 14 - Diferença Entre Type Alias e Interface
+
+interface Person {
+    name: string
+}
+
+interface Person {
+    age: number
+}
+
+const somePerson: Person = {
+    name: "Irving",
+    age: 39
+}
+
+console.log(somePerson)
+
+type personType = {
+    name: string
+}
+
+const somePersonType: personType = {
+    name: "Irving Paim"
+}
+
+console.log(somePersonType)
+
+// 15 - Literal Types
+
+let test: "testando"
+
+test = "testando"
+
+console.log(test)
+
+const showDirection = (direction: "left" | "rigth" | "center") => {
+    console.log(`A direção é: ${direction}`)
+}
+
+showDirection("center")
+
+// 16 - Non-null Assertion Operator
+
+const p = document.getElementById('some-p')
+
+console.log(p!.textContent)
+
+const para = document.createElement('h2')
+para.textContent = "Título de Exemplo"
+para.insertAdjacentElement('afterend', p!)
+
+console.log(para.textContent)
+

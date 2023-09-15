@@ -79,3 +79,36 @@ const showId = (id) => {
 };
 showId(1);
 showId("200");
+const showCoords = ({ x, y, z }) => {
+    console.log(`X: ${x} Y: ${y} Z: ${z}`);
+};
+const coordObj = {
+    x: 10,
+    y: 15,
+    z: 20
+};
+showCoords(coordObj);
+const somePerson = {
+    name: "Irving",
+    age: 39
+};
+console.log(somePerson);
+const somePersonType = {
+    name: "Irving Paim"
+};
+console.log(somePersonType);
+// 15 - Literal Types
+let test;
+test = "testando";
+console.log(test);
+const showDirection = (direction) => {
+    console.log(`A direção é: ${direction}`);
+};
+showDirection("center");
+// 16 - Non-null Assertion Operator
+const p = document.getElementById('some-p');
+console.log(p.textContent);
+const para = document.createElement('h2');
+para.textContent = "Título de Exemplo";
+para.insertAdjacentElement('afterend', p);
+console.log(para.textContent);
