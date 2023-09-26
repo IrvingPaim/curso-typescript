@@ -106,3 +106,4 @@ const showDogDetails = (dog: Dog) => {
 
 showDogDetails(turca)
 showDogDetails(bob)
+
