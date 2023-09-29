@@ -51,3 +51,55 @@ console.log(biggestNumber(1, 2));
 console.log(biggestNumber("12", "5"));
 console.log(typeof biggestNumber(1, 2));
 console.log(typeof biggestNumber("12", "5"));
+const mergeArrays = (arr1, arr2) => {
+    return arr1.concat(arr2);
+};
+console.log(mergeArrays([1, 5, 7], [10, 15]));
+console.log(mergeArrays([1, 5, 7], ["10", "15", "Irving"]));
+console.log(mergeArrays([true, false], ["10", "15", "Irving"]));
+// 6 - Parâmetros Opcionais
+const modernGreeting = (name, greet) => {
+    if (greet) {
+        return `Olá ${greet} ${name}, tudo bem?`;
+    }
+    return `Olá ${name}, tudo bem?`;
+};
+console.log(modernGreeting("Irving"));
+console.log(modernGreeting("Irving", "Dr."));
+// 7 - Parâmetros Default
+const somaDefault = (n1, n2 = 10) => {
+    return n1 + n2;
+};
+console.log(somaDefault(14));
+console.log(somaDefault(14, 16));
+// 8 - O Tipo Unknown
+const doSomething = (x) => {
+    if (Array.isArray(x)) {
+        console.log(x[0]);
+    }
+    else if (typeof x === 'number') {
+        console.log(`O ${x} é um número`);
+    }
+    else {
+        console.log('X é outra coisa');
+    }
+};
+doSomething([10, 20, 30]);
+doSomething(10);
+doSomething("oi");
+// 9 - O tipo Never
+const showErrorMessage = (msg) => {
+    throw new Error(msg);
+};
+//showErrorMessage("Servidor caiu! Estamos trabalhando para retorno da normalidade!")
+// 10 - Rest Operator??? - Parameter
+const sumAll = (...n) => {
+    return n.reduce((acc, number) => acc + number, 0);
+};
+console.log(sumAll(1, 2, 3, 4, 5));
+// 11 - Destructuring
+const showProductdetails = ({ name, price }) => {
+    return `O nome do produto é ${name} e ele custa R$ ${price}`;
+};
+const shirt = { name: "Camisa", price: 49.99 };
+console.log(showProductdetails(shirt));
