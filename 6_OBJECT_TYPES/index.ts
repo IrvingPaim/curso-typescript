@@ -86,3 +86,93 @@ coords.z = 20
 
 console.log(coords)
 
+// 5 - Extending Interfaces
+
+interface Human {
+    name: string,
+    age: number
+}
+
+interface SuperHuman extends Human {
+    superpowers: string[]
+}
+
+const irving: Human = {
+    name: 'Irving',
+    age: 40
+}
+
+console.log(irving)
+
+const goku: SuperHuman = {
+    name: 'Goku',
+    age: 30,
+    superpowers: ['kamehameha', 'genki-dama']
+}
+
+console.log(goku)
+
+console.log(goku.superpowers[1])
+
+// 6 - Intersection Types
+
+interface Character {
+    name: string
+}
+
+interface Gun {
+    type: string,
+    caliber: number
+}
+
+type HumanWithGun = Character & Gun
+
+const arnold: HumanWithGun = {
+    name: 'Arnold',
+    type: 'Shotgun',
+    caliber: 12
+}
+
+console.log(arnold)
+
+console.log(`${arnold.name}, o exterminador do futuro, usou uma ${arnold.type} de calibre ${arnold.caliber} para matar o inimigo`)
+
+// 7 - ReadonlyArray
+
+let myArray: ReadonlyArray<string> = ['maça', 'laranja', 'banana']
+
+console.log(myArray)
+
+myArray.forEach(item => console.log(`Fruta: ${item}`))
+
+console.log(myArray)
+
+myArray = myArray.map(item => `Fruta: ${item}`)
+
+console.log(myArray)
+
+// 8 - Tuplas
+
+type fiveNumbers = [number, number, number, number, number]
+
+const myNumberArray: fiveNumbers = [1, 2, 3, 4, 5]
+
+console.log(myNumberArray)
+
+type nameAndAge = [string, number]
+
+const anotherUser: nameAndAge = ['Irving', 40]
+
+console.log(anotherUser)
+
+// 9 - Tuplas com readonly
+
+function showNumbers (numbers: readonly [number, number]) {
+    console.log(numbers[0])
+    console.log(numbers[1])
+}
+
+showNumbers([10, 20])
+
+
+
